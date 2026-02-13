@@ -257,6 +257,7 @@ export const actionWrapTextInContainer = register({
                   type: isUsingAdaptiveRadius("rectangle")
                     ? ROUNDNESS.ADAPTIVE_RADIUS
                     : ROUNDNESS.PROPORTIONAL_RADIUS,
+                  value: appState.currentItemCornerRadius,
                 }
               : null,
           opacity: 100,

@@ -8789,6 +8789,7 @@ class App extends React.Component<AppProps, AppState> {
           type: isUsingAdaptiveRadius(elementType)
             ? ROUNDNESS.ADAPTIVE_RADIUS
             : ROUNDNESS.PROPORTIONAL_RADIUS,
+          value: this.state.currentItemCornerRadius,
         }
       : null;
   }

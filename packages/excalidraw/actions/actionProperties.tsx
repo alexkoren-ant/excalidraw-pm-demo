@@ -1,6 +1,6 @@
 import { pointFrom } from "@excalidraw/math";
 
-import { useEffect, useMemo, useRef, useState } from "react";
+import React, { useEffect, useMemo, useRef, useState } from "react";
 
 import {
   DEFAULT_ELEMENT_BACKGROUND_COLOR_PALETTE,
@@ -23,6 +23,7 @@ import {
   reduceToCommonValue,
   invariant,
   FONT_SIZES,
+  DEFAULT_ADAPTIVE_RADIUS,
 } from "@excalidraw/common";
 
 import { canBecomePolygon, getNonDeletedElements } from "@excalidraw/element";
@@ -1487,6 +1488,7 @@ export const actionChangeRoundness = register<"sharp" | "round">({
                   type: isUsingAdaptiveRadius(el.type)
                     ? ROUNDNESS.ADAPTIVE_RADIUS
                     : ROUNDNESS.PROPORTIONAL_RADIUS,
+                  value: appState.currentItemCornerRadius,
                 }
               : null,
         });
@@ -1508,6 +1510,21 @@ export const actionChangeRoundness = register<"sharp" | "round">({
       (el) => el.roundness?.type === ROUNDNESS.LEGACY,
     );
 
+    const roundnessValue = getFormValue(
+      elements,
+      app,
+      (element) =>
+        hasLegacyRoundness
+          ? null
+          : element.roundness
+          ? "round"
+          : "sharp",
+      (element) =>
+        !isArrowElement(element) && element.hasOwnProperty("roundness"),
+      (hasSelection) =>
+        hasSelection ? null : appState.currentItemRoundness,
+    );
+
     return (
       <fieldset>
         <legend>{t("labels.edges")}</legend>
@@ -1526,25 +1543,121 @@ export const actionChangeRoundness = register<"sharp" | "round">({
                 icon: EdgeRoundIcon,
               },
             ]}
-            value={getFormValue(
-              elements,
-              app,
-              (element) =>
-                hasLegacyRoundness
-                  ? null
-                  : element.roundness
-                  ? "round"
-                  : "sharp",
-              (element) =>
-                !isArrowElement(element) && element.hasOwnProperty("roundness"),
-              (hasSelection) =>
-                hasSelection ? null : appState.currentItemRoundness,
-            )}
+            value={roundnessValue}
             onChange={(value) => updateData(value)}
           />
           {renderAction("togglePolygon")}
         </div>
+        {roundnessValue === "round" && renderAction("changeCornerRadius")}
       </fieldset>
+    );
+  },
+});
+
+export const actionChangeCornerRadius = register<number>({
+  name: "changeCornerRadius",
+  label: "Corner radius",
+  trackEvent: false,
+  perform: (elements, appState, value) => {
+    return {
+      elements: changeProperty(
+        elements,
+        appState,
+        (el) => {
+          if (isElbowArrow(el) || !el.roundness) {
+            return el;
+          }
+
+          return newElementWith(el, {
+            roundness: {
+              type: el.roundness.type,
+              value,
+            },
+          });
+        },
+        true,
+      ),
+      appState: {
+        ...appState,
+        currentItemCornerRadius: value,
+      },
+      captureUpdate: CaptureUpdateAction.IMMEDIATELY,
+    };
+  },
+  PanelComponent: ({ elements, app, updateData }) => {
+    const selectedElements = app.scene.getSelectedElements(app.state);
+    const hasRoundElements = selectedElements.some((el) => el.roundness);
+
+    if (!hasRoundElements) {
+      return null;
+    }
+
+    let hasCommonRadius = true;
+    const firstElementRadius = selectedElements.find((el) => el.roundness)?.roundness?.value;
+    const leastCommonRadius = selectedElements.reduce((acc, element) => {
+      if (!element.roundness) {
+        return acc;
+      }
+      const elementRadius = element.roundness.value ?? DEFAULT_ADAPTIVE_RADIUS;
+      if (acc != null && acc !== elementRadius) {
+        hasCommonRadius = false;
+      }
+      if (acc == null || acc > elementRadius) {
+        return elementRadius;
+      }
+      return acc;
+    }, firstElementRadius ?? null);
+
+    const value = leastCommonRadius ?? app.state.currentItemCornerRadius ?? DEFAULT_ADAPTIVE_RADIUS;
+
+    const rangeRef = React.useRef<HTMLInputElement>(null);
+    const valueRef = React.useRef<HTMLDivElement>(null);
+
+    useEffect(() => {
+      if (rangeRef.current && valueRef.current) {
+        const rangeElement = rangeRef.current;
+        const valueElement = valueRef.current;
+        const inputWidth = rangeElement.offsetWidth;
+        const thumbWidth = 15;
+        const position =
+          ((value - 4) / (128 - 4)) * (inputWidth - thumbWidth) + thumbWidth / 2;
+        valueElement.style.left = `${position}px`;
+        rangeElement.style.background = `linear-gradient(to right, var(--color-slider-track) 0%, var(--color-slider-track) ${
+          ((value - 4) / (128 - 4)) * 100
+        }%, var(--button-bg) ${
+          ((value - 4) / (128 - 4)) * 100
+        }%, var(--button-bg) 100%)`;
+      }
+    }, [value]);
+
+    return (
+      <label className="control-label">
+        {t("labels.cornerRadius")}
+        <div className="range-wrapper">
+          <input
+            style={{
+              ["--color-slider-track" as string]: hasCommonRadius
+                ? undefined
+                : "var(--button-bg)",
+            }}
+            ref={rangeRef}
+            type="range"
+            min="4"
+            max="128"
+            step="4"
+            onChange={(event) => {
+              updateData(+event.target.value);
+            }}
+            value={value}
+            className="range-input"
+            data-testid="corner-radius"
+          />
+          <div className="value-bubble" ref={valueRef}>
+            {value}
+          </div>
+          <div className="zero-label">4</div>
+        </div>
+      </label>
     );
   },
 });
