@@ -9,12 +9,35 @@ Excalidraw is a **monorepo** with a clear separation between the core library an
 - **`packages/`** - Core packages: `@excalidraw/common`, `@excalidraw/element`, `@excalidraw/math`, `@excalidraw/utils`
 - **`examples/`** - Integration examples (NextJS, browser script)
 
+## Installing Dependencies
+
+This project uses **Yarn** for package management with Yarn workspaces for the monorepo.
+
+```bash
+yarn install    # Install all dependencies (requires Node >=18)
+```
+
+Run this from the repository root. It will install dependencies for all packages and the app.
+
 ## Development Workflow
 
 1. **Package Development**: Work in `packages/*` for editor features
 2. **App Development**: Work in `excalidraw-app/` for app-specific features
 3. **Testing**: Always run `yarn test:update` before committing
 4. **Type Safety**: Use `yarn test:typecheck` to verify TypeScript
+
+## Running the Project
+
+```bash
+yarn start           # Start the dev server (excalidraw-app on localhost)
+```
+
+To build for production:
+
+```bash
+yarn build           # Build the full app
+yarn build:packages  # Build just the library packages (common, math, element, excalidraw)
+```
 
 ## Development Commands
 
