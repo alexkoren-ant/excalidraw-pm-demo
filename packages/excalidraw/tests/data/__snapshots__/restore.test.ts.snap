@@ -117,7 +117,6 @@ exports[`restoreElements > should restore correctly with rectangle, ellipse and 
   "roughness": 2,
   "roundness": {
     "type": 3,
-    "value": 32,
   },
   "seed": Any<Number>,
   "strokeColor": "red",
@@ -156,7 +155,6 @@ exports[`restoreElements > should restore correctly with rectangle, ellipse and 
   "roughness": 2,
   "roundness": {
     "type": 3,
-    "value": 32,
   },
   "seed": Any<Number>,
   "strokeColor": "red",
@@ -195,7 +193,6 @@ exports[`restoreElements > should restore correctly with rectangle, ellipse and 
   "roughness": 2,
   "roundness": {
     "type": 3,
-    "value": 32,
   },
   "seed": Any<Number>,
   "strokeColor": "red",

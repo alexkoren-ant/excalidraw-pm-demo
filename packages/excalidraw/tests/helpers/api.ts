@@ -270,7 +270,6 @@ export class API {
             type: isLinearElementType(type)
               ? ROUNDNESS.PROPORTIONAL_RADIUS
               : ROUNDNESS.ADAPTIVE_RADIUS,
-            value: appState.currentItemCornerRadius,
           }
         : null,
       roughness: rest.roughness ?? appState.currentItemRoughness,
