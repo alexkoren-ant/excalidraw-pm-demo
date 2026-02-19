@@ -42,7 +42,6 @@ Fill in every section of the template with substantive content:
 - **Technical Approach**: Outline the implementation strategy given Excalidraw's architecture (React component library in `packages/excalidraw/`, monorepo structure). Identify affected areas and dependencies.
 - **Success Metrics**: Ground targets in the analytics baselines from the feedback file. Reference current values and set improvement targets.
 - **Risks and Mitigations**: Identify risks from feedback patterns (e.g., users abandoning workflows, compatibility concerns).
-- **Milestones**: Break the work into 2-4 delivery phases.
 - **Open Questions**: List genuine open design/technical questions raised by the feedback.
 
 ### Step 4: Write the PRD
