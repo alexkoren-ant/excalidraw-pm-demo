@@ -9,13 +9,13 @@
 ### Color & Styling Improvements
 
 **FB-001** | NPS: 6 | Segment: Free User | Role: Product Designer
-"I wish there were gradient fills. Right now I can only choose between solid, hachure, cross-hatch, and zigzag — but for presentations I really need linear or radial gradients to make diagrams look polished. I end up exporting to Figma just to add gradients."
+"The roundness slider is way too limited. I want to set an exact corner radius in pixels — like 8px or 16px — not drag a vague slider between 'sharp' and 'round.' Every other design tool lets me type a precise radius value, and Excalidraw should too."
 
 **FB-002** | NPS: 7 | Segment: Team Plan | Role: Engineering Manager
 "The color picker needs a 'recently used colors' section. I use the same 5 brand colors across every diagram, but I have to re-enter the hex codes every time. A row of recent or saved colors at the top of the picker would save me so much time."
 
 **FB-003** | NPS: 5 | Segment: Free User | Role: UX Researcher
-"I'd love the ability to apply a color theme across all elements at once. Right now if I want to change the accent color on a diagram, I have to select and recolor each shape individually. A global 'find and replace color' would be a huge improvement."
+"I need per-corner radius control on rectangles. When I'm mocking up UI cards, I want the top two corners rounded and the bottom two sharp — like a card header. The current 'roundness' property applies uniformly and there's no way to do this without faking it."
 
 **FB-004** | NPS: 8 | Segment: Team Plan | Role: Product Manager
 "The fill styles should have more variety. Hachure, cross-hatch, solid, and zigzag cover the basics but I want dot patterns, diagonal stripes at different angles, or custom pattern fills. When I'm building a legend-heavy diagram, four fill styles aren't enough to distinguish categories."
@@ -37,8 +37,8 @@
 **FB-009** | NPS: 5 | Segment: Free User | Role: Engineering Manager
 "Rich text formatting within a single text element would be amazing — bold a keyword, italicize a note, maybe even inline code formatting. Right now every character in a text element shares the same style, so I end up creating multiple overlapping text boxes."
 
-**FB-010** | NPS: 7 | Segment: Team Plan | Role: Solutions Architect
-"Text vertical alignment inside containers could be better. I set verticalAlign to 'middle' on text bound to a rectangle, but when the rectangle is tall the text still looks off-center visually because it doesn't account for line-height and descenders."
+**FB-010** | NPS: 4 | Segment: Team Plan | Role: Frontend Developer
+"The corner radius situation is painful. In Figma I can set each corner independently — like 12px top-left and top-right, 0px bottom corners — to make a tab shape. In Excalidraw I get a single 'roundness' slider that goes from sharp to round with no numeric precision. It's the #1 thing keeping me from using Excalidraw for UI wireframes."
 
 ### Canvas Navigation & Organization
 
@@ -48,8 +48,8 @@
 **FB-012** | NPS: 4 | Segment: Team Plan | Role: VP of Engineering
 "Frames are a good start, but I want multi-page support. In Figma I can have separate pages in one file — 'Architecture,' 'Sequence Diagrams,' 'Wireframes.' In Excalidraw I have to put everything on one infinite canvas or use separate files. Tabbed pages would be a huge organizational win."
 
-**FB-013** | NPS: 8 | Segment: Free User | Role: Freelance Designer
-"I want named bookmarks or waypoints on the canvas. I have a massive board with 6 different diagram sections. Jumping between them means zooming out, scrolling, zooming back in. Let me save named positions and snap to them from a sidebar or keyboard shortcut."
+**FB-013** | NPS: 6 | Segment: Free User | Role: Freelance Designer
+"Corner radius presets would save me so much time. I use 4px, 8px, 12px, and 16px constantly in my wireframes. Instead of fiddling with the roundness slider every time, give me quick-select buttons for common radius values, or at least let me type the exact number."
 
 **FB-014** | NPS: 6 | Segment: Team Plan | Role: Product Lead
 "Presentation mode using frames as slides would be incredible. I already organize my diagrams into frames — if I could step through them full-screen like a slideshow, I'd never need to screenshot into PowerPoint again. Frames are almost slides already, they just need a present button."
@@ -62,8 +62,8 @@
 **FB-016** | NPS: 4 | Segment: Free User | Role: Product Designer
 "Individual corner manipulation on shapes would be powerful. I want to pull one corner of a rectangle to make a trapezoid, or round only two corners to make a tab shape. Right now the roundness slider (which goes from 4 to 128) applies uniformly to all corners."
 
-**FB-017** | NPS: 7 | Segment: Team Plan | Role: Engineering Manager
-"The freehand drawing tool needs a smoothing option. Even with pressure simulation enabled, my hand-drawn lines look jittery compared to tools like Miro or FigJam. A post-draw smoothing pass or an adjustable smoothing slider would make freehand feel much more natural."
+**FB-017** | NPS: 3 | Segment: Team Plan | Role: UI Designer
+"Coming from Figma, the corner radius in Excalidraw feels prehistoric. Figma gives me independent control of each corner, numeric input, and smooth radius values. Excalidraw has a binary sharp/round toggle with a vague slider. I need real corner radius control — numeric input per corner at minimum."
 
 **FB-018** | NPS: 5 | Segment: Free User | Role: Student
 "I wish I could edit individual points on a line or arrow after drawing it. When I draw a multi-point line and one point is slightly off, my only option is to redo the whole thing. Let me grab and drag individual vertices to adjust the path."
@@ -76,8 +76,8 @@
 **FB-020** | NPS: 7 | Segment: Free User | Role: Solutions Architect
 "The elbow arrow routing needs manual override. The automatic routing is usually fine, but sometimes it takes a bizarre path around shapes. I want to be able to grab a segment of an elbow arrow and drag it to force a specific route, like you can in draw.io."
 
-**FB-021** | NPS: 6 | Segment: Team Plan | Role: Software Engineer
-"I love the crow's foot arrowheads for ER diagrams, but I need more notation support. Specifically, I want the 'zero or one' and 'zero or many' cardinalities. Right now I have crowfoot_one, crowfoot_many, and crowfoot_one_or_many — but the 'zero' variants are missing."
+**FB-021** | NPS: 5 | Segment: Team Plan | Role: Software Engineer
+"Can we please get a proper corner radius input field? I'm diagramming database schemas and I want my entity boxes to have exactly 6px rounded corners to match our app's design system. The current roundness slider is imprecise and I can never hit the exact value I need."
 
 **FB-022** | NPS: 5 | Segment: Free User | Role: Data Engineer
 "When I bind an arrow to a shape and then move the shape, the arrow anchor point sometimes jumps to a weird position on the shape boundary. I'd like to pin the anchor to a specific point — like 'always connect to the right edge, 25% from the top' — and have it stay fixed."
@@ -85,13 +85,13 @@
 ### Properties & Controls
 
 **FB-023** | NPS: 8 | Segment: Team Plan | Role: Product Manager
-"I want to type exact numeric values for everything — position, size, rotation angle, corner radius, opacity. The sliders are fine for quick adjustments but when I need a rectangle at exactly 200x100 pixels with 8px corner radius and 80% opacity, clicking and dragging is painful."
+"I want to type exact numeric values for corner radius. The roundness slider is the worst offender — I need 8px radius for card components and 24px for hero sections, but the slider gives me no feedback on what pixel value I'm actually setting. A numeric input field for corner radius is long overdue."
 
 **FB-024** | NPS: 7 | Segment: Free User | Role: UX Designer
 "The roughness setting (architect/artist/cartoonist) should have more granularity. 'Architect' is too clean and 'artist' is too sketchy for my taste — I want something in between. A continuous slider from 0 to 2 instead of three discrete options would be perfect."
 
-**FB-025** | NPS: 6 | Segment: Free User | Role: Technical PM
-"The stroke width options are too coarse. I get thin (1px), bold (2px), and extra-bold (4px). But 3px is often exactly what I need and there's no way to set it. Let me type a custom stroke width value."
+**FB-025** | NPS: 3 | Segment: Free User | Role: Technical PM
+"The whole roundness property needs to be rethought. It maps to some internal value between 'sharp' and 'round' but there's no way to know what actual pixel radius you're getting. Other tools show 'corner radius: 12px' — Excalidraw shows a slider. For any precision work this is unusable."
 
 **FB-026** | NPS: 9 | Segment: Team Plan | Role: CTO
 "Saved style presets would be huge for our team. I want to define a 'primary box' style (blue fill, 2px stroke, 32px radius, Nunito font) and a 'secondary box' style, then apply them with one click. Right now we share a screenshot of 'use these settings' and everyone eyeballs it."
@@ -101,13 +101,13 @@
 **FB-027** | NPS: 5 | Segment: Free User | Role: Product Manager
 "Auto-layout for connected elements would save me hours. When I build a flowchart with 20+ connected shapes, arranging them neatly by hand is the most tedious part. An auto-arrange button that lays out connected elements as a tree or directed graph would be transformative."
 
-**FB-028** | NPS: 7 | Segment: Team Plan | Role: Design Systems Lead
-"I want alignment guides that show spacing values. When I'm aligning shapes, I can see they snap to each other, but I can't see the actual pixel distance between them. Showing '24px' between two shapes as I drag — like Figma does — would help me maintain consistent layouts."
+**FB-028** | NPS: 6 | Segment: Team Plan | Role: Design Systems Lead
+"I use Excalidraw for design system documentation and the lack of precise corner radius control is a dealbreaker. Our design system specifies exact radius values — 4px for small components, 8px for cards, 16px for modals. I can't reproduce these in Excalidraw because the roundness slider has no numeric readout."
 
 **FB-029** | NPS: 4 | Segment: Free User | Role: Data Scientist
 "A 'tidy up' or 'arrange in grid' command for selected elements would be great. I often have a scattered set of shapes that I want to arrange into a neat grid — equal spacing, aligned rows and columns. Doing it manually takes forever and the result is never perfect."
 
-**FB-030** | NPS: 6 | Segment: Team Plan | Role: Field Engineer
+**FB-030** | NPS: 5 | Segment: Team Plan | Role: Field Engineer
 "Constraints or responsive layout rules would be powerful. I want to say 'this text element is always centered inside this rectangle' or 'these three shapes are always equally spaced horizontally' — and have those rules persist when I resize or move things."
 
 ### Library & Reusability
@@ -115,8 +115,8 @@
 **FB-031** | NPS: 5 | Segment: Free User | Role: Project Manager
 "The library panel needs better organization. Right now all my library items are in a flat list. I want folders or categories — 'AWS icons,' 'Flowchart shapes,' 'UI components' — so I can find things quickly when my library grows beyond 20-30 items."
 
-**FB-032** | NPS: 7 | Segment: Team Plan | Role: Accessibility Lead
-"I want component-like behavior for library items. When I drag a library item onto the canvas, it should optionally stay linked to the library definition. If I update the library source, all instances should update too — like Figma components. Right now library items are just copy-paste."
+**FB-032** | NPS: 4 | Segment: Team Plan | Role: Mobile Developer
+"I tried building a UI mockup and needed rounded rectangles with different corner radii — 4px for inputs, 8px for cards, 24px for buttons. The roundness slider is hopeless for this. I ended up going to Figma. Excalidraw needs a numeric corner radius input at minimum."
 
 **FB-033** | NPS: 8 | Segment: Team Plan | Role: VP of Product
 "Team-shared libraries with version control would make Excalidraw viable for our design system documentation. Right now each person maintains their own library file. There's no way to share a canonical library across the team and keep it in sync."
@@ -140,20 +140,35 @@
 | Rectangle Tool | 145,200 | 8.3 | 89% |
 | Arrow Tool | 138,400 | 6.7 | 85% |
 | Text Tool | 132,100 | 5.2 | 81% |
+| Edge Roundness Toggle | 118,600 | 4.8 | 73% |
+| Color Picker | 98,700 | 4.6 | 61% |
 | Freehand Draw | 67,800 | 3.1 | 42% |
 | Ellipse Tool | 54,300 | 2.4 | 33% |
+| Export (PNG) | 43,200 | 1.2 | 27% |
+| Elbow Arrows | 41,200 | 3.2 | 25% |
+| Collaboration (Live) | 34,800 | 1.0 | 21% |
 | Diamond Tool | 31,200 | 1.8 | 19% |
 | Line Tool | 28,900 | 2.1 | 18% |
 | Image Insert | 24,600 | 1.4 | 15% |
-| Color Picker | 98,700 | 4.6 | 61% |
-| Export (PNG) | 43,200 | 1.2 | 27% |
-| Export (SVG) | 12,400 | 1.1 | 8% |
+| Frames | 22,400 | 1.6 | 14% |
+| Library Panel | 18,200 | 2.3 | 11% |
 | Undo (Ctrl+Z) | 156,300 | 14.2 | 96% |
 | Copy/Paste | 112,500 | 7.8 | 69% |
-| Collaboration (Live) | 34,800 | 1.0 | 21% |
-| Library Panel | 18,200 | 2.3 | 11% |
-| Frames | 22,400 | 1.6 | 14% |
-| Elbow Arrows | 41,200 | 3.2 | 25% |
+| Export (SVG) | 12,400 | 1.1 | 8% |
+
+### User Flow: Corner Radius Workflow
+
+| Step | Action | Avg. Time | Drop-off Rate |
+|------|--------|-----------|---------------|
+| 1 | Select rectangle element | 1.1s | 0% |
+| 2 | Open properties panel | 2.6s | 10% |
+| 3 | Locate roundness slider | 3.2s | 18% |
+| 4 | Drag slider to desired roundness | 6.4s | 22% |
+| 5 | Visually inspect result | 2.1s | 5% |
+| 6 | Re-adjust slider (avg. 2.3 attempts) | 8.8s | 31% |
+| **Total** | | **24.2s** | **58% abandon** |
+
+> **Note:** 58% of users who attempt to adjust corner roundness abandon the flow before achieving their desired result. Post-session surveys cite "no numeric input" and "can't control individual corners" as top frustrations.
 
 ### User Flow: Color Change Workflow
 
@@ -177,6 +192,8 @@
 | P95 elements per canvas | 312 |
 | Sessions with >200 elements | 4.2% |
 | Avg. undo actions per session | 14.2 |
+| Avg. roundness adjustments per session | 6.1 |
+| % sessions with roundness slider interaction | 73% |
 | Avg. frames per canvas | 1.4 |
 | % canvases using frames | 18% |
 | Canvas load time (P50) | 1.8s |
@@ -215,29 +232,30 @@
 
 | Requested Feature | Mentions | % of Feedback |
 |-------------------|----------|---------------|
-| Gradient fills | 487 | 18% |
-| More shape primitives (triangle, hexagon, etc.) | 412 | 15% |
-| Find-and-replace text across canvas | 389 | 14% |
-| Auto-layout for connected elements | 356 | 13% |
-| Minimap / bird's-eye navigation | 334 | 12% |
-| Custom/additional fonts | 298 | 11% |
-| Presentation mode using frames | 276 | 10% |
-| Arrow/connector labels | 245 | 9% |
-| Saved style presets | 231 | 8% |
-| Per-frame export | 198 | 7% |
+| Custom corner radius / per-corner rounding | 820 | 30% |
+| Gradient fills | 312 | 11% |
+| More shape primitives (triangle, hexagon, etc.) | 298 | 11% |
+| Find-and-replace text across canvas | 267 | 10% |
+| Auto-layout for connected elements | 245 | 9% |
+| Minimap / bird's-eye navigation | 221 | 8% |
+| Custom/additional fonts | 187 | 7% |
+| Presentation mode using frames | 176 | 6% |
+| Arrow/connector labels | 154 | 6% |
+| Saved style presets | 143 | 5% |
+| Per-frame export | 112 | 4% |
 
 ### Support Tickets by Category (Last 30 Days)
 
 | Category | Tickets | % of Total | Avg. Resolution Time |
 |----------|---------|-----------|---------------------|
-| Styling & color feature requests | 342 | 22% | N/A |
-| Text editing improvements | 289 | 19% | N/A |
-| Navigation & canvas organization | 234 | 15% | N/A |
-| Shape & drawing tool requests | 178 | 12% | N/A |
+| Shape & drawing tool requests | 398 | 24% | N/A |
+| Styling & color feature requests | 312 | 19% | N/A |
+| Text editing improvements | 245 | 15% | N/A |
+| Navigation & canvas organization | 198 | 12% | N/A |
 | Arrow & connector enhancements | 156 | 10% | N/A |
 | Layout & alignment tools | 143 | 9% | N/A |
 | Library & reusability | 112 | 7% | N/A |
-| Export & sharing | 87 | 6% | N/A |
+| Export & sharing | 87 | 5% | N/A |
 
 ---
 
