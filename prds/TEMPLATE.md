@@ -51,12 +51,6 @@ Outline the implementation strategy, key components, and any architectural decis
 |------|-----------|--------|------------|
 |      |           |        |            |
 
-## Milestones
-
-| Milestone | Description | Target Date |
-|-----------|-------------|-------------|
-|           |             |             |
-
 ## Open Questions
 
 - [ ] Question 1
